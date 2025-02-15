@@ -2,8 +2,9 @@
 
 body {
 	margin: 0;
-	padding: 0;
+	/* padding: 2rem; */
 	font-family: Arial, sans-serif;
-	/* color: white;
-	background-color: #031229; */
+	font-weight: 200;
+	/* color: white; */
+	/* background-color: #010d1f; */
 }
