@@ -20,7 +20,7 @@ export const Sider = styled(Layout.Sider)`
 		.ant-menu-item:hover,
 		.ant-menu-item-active,
 		.ant-menu-item-selected {
-			background-color: #00ffbb !important;
+			background-color:rgb(236, 236, 236) !important;
 			color: black !important;
 		}
 	}
@@ -35,9 +35,6 @@ export const ExpandButton = styled(AntButton)`
 	background-color: transparent;
 	color: white;
 	font-size: 16px;
+	font-weight: bold;
 	cursor: pointer;
-
-	&:hover {
-		color: #45a049;
-	}
 `
