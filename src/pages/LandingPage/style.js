@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Badge } from 'antd'
 
 export const StyledDivider = styled.div`
 	width: 120%;
@@ -24,3 +25,17 @@ export const IconButton = styled.a`
 		background: rgba(255, 255, 255, 0.2);
 	}
 `
+
+export const AnimatedBadge = styled(Badge)`
+  animation: bounce 1s infinite ease-in-out;
+  animation-delay: ${({ delay }) => delay}s; /* Different delay for each badge */
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+`;

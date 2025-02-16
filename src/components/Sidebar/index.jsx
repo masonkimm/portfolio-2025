@@ -1,8 +1,7 @@
-
 import { useState, useEffect, useMemo } from 'react'
-import { Menu, Tooltip } from 'antd'
+import { Badge, Menu, Tooltip } from 'antd'
 import { HomeOutlined, UserOutlined, ProjectOutlined, DoubleRightOutlined, DoubleLeftOutlined } from '@ant-design/icons'
-import { Sider, ExpandButton } from './style.js'
+import { Sider, ExpandButton, ButtonContainer } from './style.js'
 
 const SideBar = () => {
 	const [collapsed, setCollapsed] = useState(true)
@@ -50,21 +49,47 @@ const SideBar = () => {
 	}
 
 	return (
-		<Sider trigger={null} collapsible collapsed={collapsed}>
+		<Sider trigger={null} collapsed={collapsed}>
 			<Menu
 				mode='inline'
 				selectedKeys={[activeKey]}
 				className='menu'
 				onClick={handleMenuClick}
 				items={[
-					{ key: '1', icon: <HomeOutlined className='menu-item-icon' />, label: 'Home' },
-					{ key: '2', icon: <UserOutlined className='menu-item-icon' />, label: 'About Me' },
-					{ key: '3', icon: <ProjectOutlined className='menu-item-icon' />, label: 'Projects' },
+					{
+						key: '1',
+						icon: (
+							<ButtonContainer>
+								<Badge status={activeKey === '1' ? 'success' : ''} className='' /> <HomeOutlined className='menu-item-icon' />
+							</ButtonContainer>
+						),
+						label: 'Home',
+					},
+					{
+						key: '2',
+						icon: (
+							<ButtonContainer>
+								<Badge status={activeKey === '2' ? 'success' : ''} className='' /> 
+								<UserOutlined className='menu-item-icon' />
+							</ButtonContainer>
+						),
+						label: 'About Me',
+					},
+					{
+						key: '3',
+						icon: (
+							<ButtonContainer>
+								<Badge status={activeKey === '3' ? 'success' : ''} className='' /> 
+								<ProjectOutlined className='menu-item-icon' />
+							</ButtonContainer>
+						),
+						label: 'Projects',
+					},
 				]}
 			/>
-			<Tooltip title={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}>
+			{/* <Tooltip title={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}>
 				<ExpandButton icon={collapsed ? <DoubleRightOutlined /> : <DoubleLeftOutlined />} onClick={() => setCollapsed(!collapsed)} />
-			</Tooltip>
+			</Tooltip> */}
 		</Sider>
 	)
 }
