@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #f9fafb; /* light gray background */
+}
+
+.title {
+  font-size: 10rem;
+  /* margin-bottom: var(--spacing); */
+}
