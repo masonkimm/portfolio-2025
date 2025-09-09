@@ -2,11 +2,9 @@
 
 body {
   margin: 0;
+  /* padding: 30px;   */
   font-family: system-ui, sans-serif;
-  background-color: #f9fafb; /* light gray background */
-}
+  /* font-family: 'montrealMono', "montrealMono Fallback"; */
+  /* font-family: ui-monospace, "Courier New", monospace; */
 
-.title {
-  font-size: 10rem;
-  /* margin-bottom: var(--spacing); */
 }

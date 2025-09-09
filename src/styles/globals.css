@@ -1,0 +1,90 @@
+:root {
+  --hero-bg: url('https://images.unsplash.com/photo-1487700160041-babef9c3cb55?q=80&w=1704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+/* ======================================================== */
+/* Menu - left side */
+.ant-anchor-ink {
+  background-color: rgb(14, 14, 14) !important;
+}
+
+.ant-anchor-link-title {
+  color: #6b7280 !important;
+  font-size: clamp(16px, 2.2vw, 30px);
+}
+
+.ant-anchor-link-title-active {
+  color: #333 !important;
+  font-size: clamp(36px, 6vw, 44px);
+}
+
+/* ======================================================== */
+/* Landing Page */
+.container-landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)), var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-title {
+  font-size: clamp(36px, 6vw, 74px);
+  letter-spacing: -0.02em;
+  color: #333;
+}
+.landing-subtitle {
+  color: #6b7280;
+  font-size: clamp(16px, 2.2vw, 20px);
+  margin-top: 8px;
+}
+
+/* Achor Styles */
+
+.landing-menu {
+  position: sticky; /* stays in view while left side scrolls */
+  top: 0;
+  height: 100vh; /* give it a box to center within */
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  text-align: center; /* fix typo: was 'text: center;' */
+  /* optional: border-left: 1px solid #e5e7eb; */
+}
+
+/* .landing-menu__inner {
+  padding: 16px 8px;
+} */
+
+/* ======================================================== */
+/* About Page */
+.container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (max-width: 900px) { .landing-container { flex-direction: column; } .landing-left, .landing-right { width: 100%; height: auto; padding: 56px 0; } } */
