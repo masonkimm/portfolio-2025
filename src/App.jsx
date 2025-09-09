@@ -1,24 +1,74 @@
-import './App.css'
+import { Alert, Anchor, Col, Row } from 'antd'
+import Landing from './pages/Landing'
+import UnderConstructionModal from './components/Modal/UnderConstructionModal'
+import Marquee from 'react-fast-marquee';
 
-const packages = [
-  'Vite',
-  'React 19',
-  'Tailwind CSS',
-  'Ant Design',
-  'Emotion (styled & react)',
-  'ESLint setup',
-]
+const App = () => {
+  const About = () => {
+    return (
+      <main className='container-about'>
+        <div className='landing-title'>About Me</div>
+      </main>
+    )
+  }
 
-const App = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-    <h1 className="text-5xl font-bold mb-6 text-blue-700">Frontend Starter Template</h1>
-    <p className="text-lg mb-10 text-gray-600">Preconfigured and ready to build!</p>
-    <ul className="list-disc space-y-2">
-      {packages.map((pkg) => (
-        <li key={pkg} className="text-xl">{pkg}</li>
-      ))}
-    </ul>
-  </div>
-)
-
+  const Projects = () => {
+    return (
+      <main className='container-about'>
+        <div className='landing-title'>Projects</div>
+      </main>
+    )
+  }
+  return (
+    <>
+      <UnderConstructionModal />
+      {/* Fixed banner at the top */}
+      <Alert
+        message={<Marquee pauseOnHovers>🚧 Site Under Construction: Some pages and features may not be available yet. 🚧</Marquee>}
+        type='info'
+        banner
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1000,
+        }}
+      />
+      <Row className='landing-page'>
+        <Col span={4} className='landing-menu'>
+          <Anchor
+            affix={false}
+            items={[
+              {
+                key: 'part-1',
+                href: '#part-1',
+                title: 'Home',
+              },
+              {
+                key: 'part-2',
+                href: '#part-2',
+                title: 'About',
+              },
+              {
+                key: 'part-3',
+                href: '#part-3',
+                title: 'Projects',
+              },
+            ]}
+          />
+        </Col>
+        <Col span={20}>
+          <div id='part-1'>{<Landing />}</div>
+          <div id='part-2'>
+            <About />
+          </div>
+          <div id='part-3'>
+            <Projects />
+          </div>
+        </Col>
+      </Row>
+    </>
+  )
+}
 export default App
