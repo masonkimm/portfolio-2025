@@ -45,6 +45,11 @@
   margin-top: 8px;
 }
 
+.landing-icon {
+  font-size: 27px;
+  margin: 0 12px;
+}
+
 /* Achor Styles */
 
 .landing-menu {
@@ -75,15 +80,35 @@
   background-color: #fff;
 }
 
+/* base style */
+.timeline-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-top: 12px;
+}
+
+.logo-left {
+  /* text-align: end;
+  float: right; */
+  margin-left: auto;
+}
 
 
+.timeline {
+  width: 100%;
+}
 
+.timeline-year {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
 
-
-
-
-
-
+.timeline-tag {
+  margin: 10px;
+  font-size: 14px;
+}
 
 
 

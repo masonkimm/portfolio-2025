@@ -7,9 +7,9 @@ const Landing = () => {
         <div className='landing-title'>Mason Kim</div>
         <div className='landing-subtitle'>Full-Stack Developer</div>
         <div className="landing-subtitle">
-          <GithubOutlined style={{ fontSize: '32px', margin: '0 12px' }} />
-          <LinkedinOutlined style={{ fontSize: '32px', margin: '0 12px' }} />
-          <MailOutlined style={{ fontSize: '32px', margin: '0 12px' }} />
+          <GithubOutlined className='landing-icon' />
+          <LinkedinOutlined className='landing-icon' />
+          <MailOutlined className='landing-icon' />
         </div>
       </main>
     )

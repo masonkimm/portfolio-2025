@@ -2,15 +2,10 @@ import { Alert, Anchor, Col, Row } from 'antd'
 import Landing from './pages/Landing'
 import UnderConstructionModal from './components/Modal/UnderConstructionModal'
 import Marquee from 'react-fast-marquee';
+import About from './pages/About';
 
 const App = () => {
-  const About = () => {
-    return (
-      <main className='container-about'>
-        <div className='landing-title'>About Me</div>
-      </main>
-    )
-  }
+  
 
   const Projects = () => {
     return (
@@ -21,7 +16,7 @@ const App = () => {
   }
   return (
     <>
-      <UnderConstructionModal />
+      {/* <UnderConstructionModal /> */}
       {/* Fixed banner at the top */}
       <Alert
         message={<Marquee pauseOnHovers>🚧 Site Under Construction: Some pages and features may not be available yet. 🚧</Marquee>}
