@@ -18,7 +18,7 @@ const App = () => {
     <>
       {/* <UnderConstructionModal /> */}
       {/* Fixed banner at the top */}
-      <Alert
+      {/* <Alert
         message={<Marquee pauseOnHovers>🚧 Site Under Construction: Some pages and features may not be available yet. 🚧</Marquee>}
         type='info'
         banner
@@ -29,7 +29,7 @@ const App = () => {
           width: '100%',
           zIndex: 1000,
         }}
-      />
+      /> */}
       <Row className='landing-page'>
         <Col span={4} className='landing-menu'>
           <Anchor
