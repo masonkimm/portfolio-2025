@@ -29,7 +29,11 @@
   height: 100vh;
   padding: 0;
   margin: 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)), var(--hero-bg);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.2)
+    ),
+    var(--hero-bg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -71,70 +75,70 @@
 /* ======================================================== */
 /* About Page */
 /* ======================================================== */
-/* .container-about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-color: #fff;
-} */
 
 .container-about {
-  height: 100vh; /* your existing full-viewport section */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  border: 1px solid red;
+  padding: 30px;
+  /* border: 1px solid red; */
 }
 .container-about-top {
-  /* flex: 1; */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 24px; */
-  border: 1px solid orange;
+  /* align-items: center;
+  justify-content: center; */
+  /* border: 1px solid orange; */
 }
 .about-title {
   font-size: clamp(36px, 6vw, 74px);
   letter-spacing: -0.02em;
   color: #333;
-  /* margin-bottom: 12px; */
 }
 
 .container-about-bottom {
   flex: 1;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  /* padding: 24px; */
+  width: 85%;
+  margin-top: -50px;
 }
-
 
 /* ======================================================== */
 /* Timeline */
 /* ======================================================== */
 
+
+
+/* Carousel */
+.carousel-content {
+  text-align: center;
+  color: #fff;
+  background-color: #364d79;
+  margin-top: 16px;
+  padding: 24px;
+  min-height: 600px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+.slick-arrow {
+  color: #fff !important;
+}
+.slick-active {
+  color: red !important;
+}
+
+
+/* timeline contents */
 .timeline-logo {
   width: 150px;
   height: auto;
   display: block;
   margin-top: 12px;
-}
-
-.logo-left {
-  /* text-align: end;
-  float: right; */
-  margin-left: auto;
-}
-
-.timeline {
-  width: 100%;
 }
 
 .timeline-year {
@@ -143,9 +147,8 @@
   margin-bottom: 4px;
 }
 
-.timeline-tag {
-  margin: 10px;
-  font-size: 14px;
+.timeline-actions {
+  right: 0;
+  float: right;
+  margin: 20px 0;
 }
-
-/* @media (max-width: 900px) { .landing-container { flex-direction: column; } .landing-left, .landing-right { width: 100%; height: auto; padding: 56px 0; } } */
