@@ -19,7 +19,7 @@ const About = () => {
           }
         </Paragraph>
       </div>
-      <Divider style={{ backgroundColor: '#0c0c0cff' }} />
+      <Divider style={{ backgroundColor: '#c7c7c7' }} />
       <div className='container-about-bottom'>
         <Timeline />
       </div>

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Button, Carousel, message, Steps } from 'antd'
+import { Carousel, Steps, Row, Col } from 'antd'
 // logos
 import logoGmu from '../../assets/logo-gmu.png'
 import logoHhmi from '../../assets/logo-hhmi.png'
@@ -61,7 +61,6 @@ const steps = [
 ]
 
 const Timeline = () => {
-  // const { token } = theme.useToken()
   const [current, setCurrent] = useState(0)
   const carouselRef = useRef(null)
 
@@ -77,33 +76,41 @@ const Timeline = () => {
   const handleAfterChange = (i) => setCurrent(i)
 
   return (
-    <div className='timeline-wrap'>
-      <Steps
-        className='timeline-steps'
-        current={current}
-        onChange={handleStepChange}
-        items={items}
-        labelPlacement='vertical'
-        size='small'
-        progressDot
-      />
-      <Carousel
-        className=''
-        ref={carouselRef}
-        autoplay
-        autoplaySpeed={5500}
-        afterChange={handleAfterChange}
-        dots
-        arrows
-      >
-        {steps.map((s) => (
-          <div key={s.title}>
-            <div className='carousel-content'>{s.content}</div>
-          </div>
-        ))}
-      </Carousel>
+    <>
+      <Row className='timeline-container' gutter={16}>
+        <Col span={4}>
+          {/* <Desc text='First' /> */}
+          <Steps
+            direction='vertical'
+            className='timeline-steps'
+            current={current}
+            onChange={handleStepChange}
+            items={items}
+            labelPlacement='vertical'
+            size='small'
+            progressDot
+          />
+        </Col>
+        <Col span={20}>
+          <Carousel
+            className=''
+            ref={carouselRef}
+            autoplay
+            autoplaySpeed={5500}
+            afterChange={handleAfterChange}
+            dots
+            arrows
+          >
+            {steps.map((s) => (
+              <div key={s.title}>
+                <div className='carousel-content'>{s.content}</div>
+              </div>
+            ))}
+          </Carousel>
+        </Col>
+      </Row>
 
-      <div className='timeline-actions'>
+      {/* <div className='timeline-actions'>
         <Button
           onClick={() => carouselRef.current?.prev()}
           disabled={current === 0}
@@ -124,8 +131,8 @@ const Timeline = () => {
             Next
           </Button>
         )}
-      </div>
-    </div>
+      </div> */}
+    </>
   )
 }
 

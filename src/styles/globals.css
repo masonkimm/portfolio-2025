@@ -10,12 +10,24 @@
 
 .ant-anchor-link-title {
   color: #6b7280 !important;
-  font-size: clamp(16px, 2.2vw, 30px);
+  /* font-size: clamp(16px, 2.2vw, 15px); */
 }
 
 .ant-anchor-link-title-active {
   color: #333 !important;
-  font-size: clamp(36px, 6vw, 44px);
+  font-size: 50px;
+  /* font-size: clamp(36px, 6vw, 44px); */
+}
+:where(.css-dev-only-do-not-override-bqnnvg).ant-anchor-wrapper:not(.ant-anchor-wrapper-horizontal) .ant-anchor::before {
+  /* background-color: #111111 !important; */
+  display: none !important;
+}
+.ant-anchor-ink {
+  display: none !important;
+}
+
+.landing-menu {
+  border-right: 1px solid #c7c7c7;
 }
 
 /* ======================================================== */
@@ -25,7 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -37,22 +49,32 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* float: right; */
+  /* right: 0; */
+  padding-left: 600px;
 }
 
 .landing-title {
-  font-size: clamp(36px, 6vw, 74px);
+  font-size: clamp(36px, 6vw, 500px);
   letter-spacing: -0.02em;
   color: #333;
+  /* margin-left: 300px; */
 }
 .landing-subtitle {
   color: #6b7280;
   font-size: clamp(16px, 2.2vw, 20px);
+  letter-spacing: -0.02em;
+
   margin-top: 8px;
+  /* margin-left: 160px; */
+
 }
 
 .landing-icon {
   font-size: 27px;
-  margin: 0 12px;
+  padding-right: 35px;
+  /* margin: 0 12px; */
+  /* margin-left: -40px; */
 }
 
 /* Achor Styles */
@@ -88,6 +110,8 @@
 }
 .container-about-top {
   display: flex;
+  padding-top: 50px;
+
   /* align-items: center;
   justify-content: center; */
   /* border: 1px solid orange; */
@@ -95,7 +119,7 @@
 .about-title {
   font-size: clamp(36px, 6vw, 74px);
   letter-spacing: -0.02em;
-  color: #333;
+  color: #505050;
 }
 
 .container-about-bottom {
@@ -104,7 +128,7 @@
   flex-direction: column;
   justify-content: center;
   width: 85%;
-  margin-top: -50px;
+  /* margin-top: -50px; */
 }
 
 /* ======================================================== */
@@ -116,8 +140,9 @@
 /* Carousel */
 .carousel-content {
   text-align: center;
-  color: #fff;
-  background-color: #364d79;
+  /* color: #fff; */
+  color: black;
+  /* background-color: #364d79; */
   margin-top: 16px;
   padding: 24px;
   min-height: 600px;
@@ -126,10 +151,16 @@
   margin: 0;
 }
 .slick-arrow {
-  color: #fff !important;
+  /* color: #fff !important; */
+  color: black !important;
 }
 .slick-active {
   color: red !important;
+}
+
+.timeline-container {
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -151,4 +182,13 @@
   right: 0;
   float: right;
   margin: 20px 0;
+}
+
+.ant-steps-icon-dot, :where(.css-dev-only-do-not-override-bqnnvg).ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after {
+  background: rgb(1, 104, 3) !important
+}
+
+
+.ant-steps-item.ant-steps-item-process.ant-steps-item-active {
+  color: red !important;
 }
