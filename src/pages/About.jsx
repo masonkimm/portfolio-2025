@@ -14,7 +14,7 @@ const About = () => {
     <main className='container-about'>
       <div className='container-about-top'>
         <Paragraph>
-          <span className='about-title'> About me</span>
+          <span className='title'> About me</span>
           <br />
           {
             "I'm a full-stack developer with a strong focus on building clean, responsive user interfaces. Over the past few years I've worked across both frontend and backend stacks — from designing React applications with modern tooling to developing secure APIs in Python and Node."

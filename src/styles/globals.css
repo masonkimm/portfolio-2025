@@ -57,7 +57,7 @@
   padding-left: 600px;
 }
 
-.landing-title {
+.title {
   font-size: clamp(36px, 6vw, 500px);
   letter-spacing: -0.02em;
   color: #333;
@@ -100,31 +100,22 @@
 /* About Page */
 /* ======================================================== */
 
+/* Remove fixed height */
 .container-about {
-  height: 100vh;
+  /* height: 100vh;  ❌ REMOVE THIS */
+  min-height: 100vh;        /* flexible: at least viewport height */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
+  justify-content: flex-start;
   background: #fff;
   padding: 10px;
-  /* border: 1px solid red; */
-}
-
-.container-about {
-  min-height: 100vh; /* at least full screen height */
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* content starts at the top and flows down */
-  background: #fff;
-  /* padding: 30px; */
   box-sizing: border-box;
-  gap: 10px; /* space between sections */
+  margin-bottom: 60px;      /* space before Projects */
 }
 .container-about-top {
   display: flex;
   margin-top: -10px;
+  margin-bottom: -10px;
   /* align-items: center;
   justify-content: center; */
   /* border: 1px solid orange; */
@@ -133,9 +124,7 @@
   font-size: clamp(36px, 6vw, 74px);
   letter-spacing: -0.02em;
   color: #505050;
-  
 }
-
 
 .container-about-middle {
   display: flex;
@@ -170,7 +159,7 @@
   justify-content: center;
   align-items: center;
   /* width: 85%; */
-  /* margin-top: -50px; */
+  /* margin-top: -20px; */
 }
 
 /* ======================================================== */
@@ -178,52 +167,116 @@
 /* ======================================================== */
 
 .timeline-container {
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
   width: 80%;
 }
 
-/* Carousel */
-.carousel-content {
-  text-align: center;
-  /* color: #fff; */
-  color: black;
-  /* background-color: #364d79; */
-  margin-top: 16px;
-  padding: 24px;
-  min-height: 600px;
-  display: grid;
-  place-items: center;
-  margin: 0;
+/* unfinished steps line */
+.ant-steps-item-wait .ant-steps-item-tail::after {
+  background-color: #c7c7c7 !important;
 }
+
+/* finished steps line */
+.ant-steps-item-finish .ant-steps-item-tail::after {
+  background-color: #1e6120 !important;
+}
+
+/* current (active) step line */
+.ant-steps-item-process .ant-steps-item-tail::after {
+  background-color: #1e6120 !important;
+}
+
+/* Carousel arrows */
+
 .slick-arrow {
-  /* color: #fff !important; */
   color: black !important;
 }
-.slick-active {
-  color: red !important;
+
+/* Carousel */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.carousel-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90%;
+  max-width: 1000px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 40px 50px;
+
+  border-radius: 16px;
+  /* background: linear-gradient(135deg, #ffffff, #f7f7f7); */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.carousel-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* timeline contents */
-.timeline-logo {
-  width: 150px;
+.carousel-left {
+  flex: 2;
+  text-align: left;
+}
+
+.carousel-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-year {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1e6120;
+  margin-bottom: 8px;
+}
+
+.carousel-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+}
+
+.carousel-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.carousel-description {
+  font-size: 16px;
+  margin-top: 15px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 550px;
+}
+
+.carousel-logo {
+  width: 200px;
   height: auto;
-  display: block;
-  margin-top: 12px;
+  /* filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); */
+  /* transition: transform 0.3s ease; */
+}
+.carousel-logo:hover {
+  transform: scale(1.1);
 }
 
-.timeline-year {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 4px;
-}
 
-.timeline-actions {
-  right: 0;
-  float: right;
-  margin: 20px 0;
-}
+
+
+
+
 
 .ant-steps-icon-dot,
 :where(.css-dev-only-do-not-override-bqnnvg).ant-steps
@@ -237,12 +290,23 @@
   color: red !important;
 }
 
+/* Resume iframe */
+/* Resume viewer */
+.resume-frame {
+  width: 100%;
+  height: 80vh;             /* take 80% of viewport */
+  max-height: 900px;        /* don’t grow endlessly */
+  border: none;
+  border-radius: 8px;
+  display: block;
+  overflow: auto;           /* scroll inside if content overflows */
+}
 
 /* ======================================================== */
 /* Projects */
 /* ======================================================== */
 .container-projects {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -250,4 +314,30 @@
   background: #fff;
   padding: 10px;
   /* border: 1px solid red; */
+}
+
+.icon {
+  font-size: 25px;
+  margin: 0 8px;
+  color: #555;
+  transition: transform 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.icon-collapse {
+  font-size: 20px;
+}
+
+.icon:hover {
+  transform: scale(1.4);
+  color: #1e6120;
+}
+
+
+.ant-collapse-header {
+  background-color: #fff
+}
+
+.ant-collapse-content-box {
+  background-color: rgb(219, 219, 219, 0.2);
 }

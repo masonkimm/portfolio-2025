@@ -4,7 +4,7 @@ import { GithubOutlined, MailOutlined, LinkedinOutlined } from '@ant-design/icon
 const Landing = () => {
     return (
       <main className='container-landing'>
-        <div className='landing-title'>Mason Kim</div>
+        <div className='title'>Mason Kim</div>
         <div className='landing-subtitle'>Full-Stack Developer</div>
         <div className="landing-subtitle">
           <GithubOutlined className='landing-icon' />

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { Carousel, Steps, Row, Col } from 'antd'
+
 // logos
 import logoGmu from '../../assets/logo-gmu.png'
 import logoHhmi from '../../assets/logo-hhmi.png'
@@ -7,132 +8,114 @@ import logoGw from '../../assets/logo-gw.png'
 import logoJdsat from '../../assets/logo-jdsat.png'
 import logoAwsCp from '../../assets/logo-aws-cp.png'
 
-const Gmu = () => (
-  <div className='timeline-content'>
-    <p className='timeline-year'>2016</p>
-    <p>George Mason University</p>
-    <p>B.S. in Neuroscience</p>
-    <img className='timeline-logo' src={logoGmu} alt='' />
-  </div>
-)
-
-const Hhmi = () => (
-  <div className='timeline-content'>
-    <p className='timeline-year'>2017</p>
-    <p>HHMI Janelia Research</p>
-    <p>Research Analyst</p>
-    <img className='timeline-logo' src={logoHhmi} alt='' />
-  </div>
-)
-
-const Gwu = () => (
-  <div className='timeline-content'>
-    <p className='timeline-year'>2020</p>
-    <p>George Washington University</p>
-    <p>Full-Stack Development Certificate</p>
-    <img className='timeline-logo' src={logoGw} alt='' />
-  </div>
-)
-
-const Jdsat = () => (
-  <div className='timeline-content'>
-    <p className='timeline-year'>2021</p>
-    <p>JD SAT Tech</p>
-    <p>Software Engineer</p>
-    <img className='timeline-logo' src={logoJdsat} alt='' />
-  </div>
-)
-
-const Aws = () => (
-  <div className='timeline-content'>
-    <p className='timeline-year'>2024</p>
-    <p>AWS Certificate</p>
-    <p>Certified Cloud Practitioner</p>
-    <img className='timeline-logo' src={logoAwsCp} alt='' />
-  </div>
-)
-
-const steps = [
-  { title: '2016', content: <Gmu /> },
-  { title: '2017', content: <Hhmi /> },
-  { title: '2020', content: <Gwu /> },
-  { title: '2021', content: <Jdsat /> },
-  { title: '2024', content: <Aws /> },
+// Put your data in one array
+const timelineData = [
+  {
+    year: '2016',
+    title: 'George Mason University',
+    subtitle: 'B.S. in Neuroscience',
+    description:
+      'Focused on cognitive neuroscience, research methods, and statistical analysis.',
+    logo: logoGmu,
+  },
+  {
+    year: '2017',
+    title: 'HHMI Janelia Research',
+    subtitle: 'Research Analyst',
+    description:
+      'Worked on neural circuit experiments and collaborated on imaging technologies.',
+    logo: logoHhmi,
+  },
+  {
+    year: '2020',
+    title: 'George Washington University',
+    subtitle: 'Full-Stack Development Certificate',
+    description:
+      'Bootcamp focused on JavaScript, React, Node.js, databases, and full-stack practices.',
+    logo: logoGw,
+  },
+  {
+    year: '2021',
+    title: 'JDSAT Inc.',
+    subtitle: 'Software Engineer',
+    description:
+      'Built data-driven web applications, dashboards, and optimized backend APIs.',
+    logo: logoJdsat,
+  },
+  {
+    year: '2024',
+    title: 'AWS Certified Cloud Practitioner',
+    subtitle: 'Amazon Web Services',
+    description:
+      'Validated cloud computing, security, and AWS fundamentals for scalable apps.',
+    logo: logoAwsCp,
+  },
 ]
+
+// Reusable item
+const CarouselItem = ({ year, title, subtitle, description, logo }) => (
+  <div className='carousel-content'>
+    <div className='carousel-left'>
+      <p className='carousel-year'>{year}</p>
+      <h2 className='carousel-title'>{title}</h2>
+      <h3 className='carousel-subtitle'>{subtitle}</h3>
+      {description && <p className='carousel-description'>{description}</p>}
+    </div>
+    <div className='carousel-right'>
+      <img className='carousel-logo' src={logo} alt={`${title} logo`} />
+    </div>
+  </div>
+)
 
 const Timeline = () => {
   const [current, setCurrent] = useState(0)
   const carouselRef = useRef(null)
 
-  const items = steps.map((s) => ({ key: s.title, title: s.title }))
+  const items = timelineData.map((item) => ({
+    key: item.year,
+    title: item.year,
+  }))
 
-  // Steps --> Carousel
   const handleStepChange = (i) => {
     setCurrent(i)
     carouselRef.current?.goTo(i, true)
   }
 
-  // Carousel -> Steps
   const handleAfterChange = (i) => setCurrent(i)
 
   return (
-    <>
-      <Row className='timeline-container' gutter={16}>
-        <Col span={4}>
-          {/* <Desc text='First' /> */}
-          <Steps
-            direction='vertical'
-            className='timeline-steps'
-            current={current}
-            onChange={handleStepChange}
-            items={items}
-            labelPlacement='vertical'
-            size='small'
-            progressDot
-          />
-        </Col>
-        <Col span={20}>
-          <Carousel
-            className=''
-            ref={carouselRef}
-            autoplay
-            autoplaySpeed={5500}
-            afterChange={handleAfterChange}
-            dots
-            arrows
-          >
-            {steps.map((s) => (
-              <div key={s.title}>
-                <div className='carousel-content'>{s.content}</div>
-              </div>
-            ))}
-          </Carousel>
-        </Col>
-      </Row>
-
-      {/* <div className='timeline-actions'>
-        <Button
-          onClick={() => carouselRef.current?.prev()}
-          disabled={current === 0}
-          style={{ marginRight: 8, backgroundColor: '#364D79', color: '#fff' }}
+    <Row className='timeline-container' gutter={2}>
+      <Col span={4}>
+        <Steps
+          direction='vertical'
+          className='timeline-steps'
+          current={current}
+          onChange={handleStepChange}
+          items={items}
+          labelPlacement='vertical'
+          size='small'
+          progressDot
+        />
+      </Col>
+      <Col span={20}>
+        <Carousel
+          ref={carouselRef}
+          autoplay
+          autoplaySpeed={5500}
+          afterChange={handleAfterChange}
+          dots
+          arrows
         >
-          Previous
-        </Button>
-        {current < steps.length - 1 && (
-          <Button
-            type='primary'
-            onClick={() => carouselRef.current?.next()}
-            style={{
-              marginRight: 8,
-              backgroundColor: '#364D79',
-              color: '#fff',
-            }}
-          >
-            Next
-          </Button>
-        )}
-      </div> */}
-    </>
+          {timelineData.map((item) => (
+            <div key={item.year}>
+              <div className='carousel-container'>
+                <CarouselItem {...item} />
+              </div>
+            </div>
+          ))}
+        </Carousel>
+      </Col>
+    </Row>
   )
 }
 
