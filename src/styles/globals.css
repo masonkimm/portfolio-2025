@@ -340,3 +340,7 @@
 .ant-collapse-content-box {
   background-color: rgb(219, 219, 219, 0.2);
 }
+
+.project-img {
+  height: 300px !important;
+}
