@@ -190,7 +190,9 @@
 /* Carousel arrows */
 
 .slick-arrow {
+  font-size: 70px !important;
   color: black !important;
+  opacity: 5 !important; /* ensure always visible */
 }
 
 /* Carousel */
@@ -271,12 +273,6 @@
   transform: scale(1.1);
 }
 
-
-
-
-
-
-
 .ant-steps-icon-dot,
 :where(.css-dev-only-do-not-override-bqnnvg).ant-steps
   .ant-steps-item-finish
@@ -293,12 +289,12 @@
 /* Resume viewer */
 .resume-frame {
   width: 100%;
-  height: 80vh;             /* take 80% of viewport */
-  max-height: 900px;        /* don’t grow endlessly */
+  height: 80vh; /* take 80% of viewport */
+  max-height: 900px; /* don’t grow endlessly */
   border: none;
   border-radius: 8px;
   display: block;
-  overflow: auto;           /* scroll inside if content overflows */
+  overflow: auto; /* scroll inside if content overflows */
 }
 
 /* ======================================================== */
@@ -332,9 +328,8 @@
   color: #1e6120;
 }
 
-
 .ant-collapse-header {
-  background-color: #fff
+  background-color: #fff;
 }
 
 .ant-collapse-content-box {
@@ -343,4 +338,22 @@
 
 .project-img {
   height: 300px !important;
+}
+
+
+
+
+
+
+.cursor {
+  font-weight: 250;
+  display: inline-block;
+  margin-left: 10px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
