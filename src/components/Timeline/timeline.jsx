@@ -103,7 +103,7 @@ const Timeline = () => {
           autoplay
           autoplaySpeed={5500}
           afterChange={handleAfterChange}
-          dots
+          // dots
           arrows
         >
           {timelineData.map((item) => (

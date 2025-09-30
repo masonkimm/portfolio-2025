@@ -1,18 +1,6 @@
-import React from 'react'
-import { Collapse as AntCollapse, Carousel, Image, Tag } from 'antd'
-import {
-  SiJavascript,
-  SiNodedotjs,
-  SiPython,
-  SiReact,
-  SiMui,
-  SiMongodb,
-  SiJquery,
-  SiBootstrap,
-  SiMysql,
-} from 'react-icons/si'
-import { AiFillHtml5 } from 'react-icons/ai'
-import { DiCss3 } from 'react-icons/di'
+import { Collapse as AntCollapse, Carousel, Image } from 'antd'
+
+import TechIcons from '../TechIcons/techIcons'
 
 // PREP Images
 import prep_1 from '../../assets/projects/prep/prep_1.png'
@@ -35,27 +23,9 @@ import cop_1 from '../../assets/projects/cop/cop_1.png'
 import cop_2 from '../../assets/projects/cop/cop_2.png'
 import cop_3 from '../../assets/projects/cop/cop_3.png'
 
-const iconMap = {
-  html: <AiFillHtml5 size={22} color='#e34c26' />,
-  css: <DiCss3 size={22} color='#1572B6' />,
-  javascript: <SiJavascript size={22} color='#f7df1e' />,
-  node: <SiNodedotjs size={22} color='#339933' />,
-  react: <SiReact size={22} color='#61DAFB' />,
-  mysql: <SiMysql size={22} color='#00758f' />,
-  mongodb: <SiMongodb size={22} color='#47A248' />,
-  jquery: <SiJquery size={22} color='#0769AD' />,
-  bootstrap: <SiBootstrap size={22} color='#7952B3' />,
-  mui: <SiMui size={22} color='#007FFF' />,
-  python: <SiPython size={22} color='#3776AB' />,
-}
-
-const TechIcons = ({ stack }) => (
-  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-    {stack.map((tech) => (
-      <span key={tech}>{iconMap[tech.toLowerCase()]}</span>
-    ))}
-  </div>
-)
+// Amazon Clone
+import ac_1 from '../../assets/projects/amazonClone/ac_1.png'
+import ac_2 from '../../assets/projects/amazonClone/ac_2.png'
 
 const Project_PREP = () => (
   <div style={{ padding: '8px 0' }}>
@@ -75,7 +45,7 @@ const Project_PREP = () => (
       management.
     </p>
     <p>
-      <strong>Live Demo Link: </strong> Deployed in a secure, private DoD cloud
+      <strong>Live Demo: </strong> Deployed in a secure, private DoD cloud
       environment
     </p>
     <p>
@@ -92,7 +62,7 @@ const Project_PREP = () => (
         padding: '20px',
       }}
     >
-      <Carousel autoplay arrows>
+      <Carousel autoplay arrows dots={false}>
         {[prep_1, prep_2, prep_3, prep_4, prep_5, prep_6, prep_7, prep_8].map(
           (img, idx) => (
             <div key={idx} style={{ textAlign: 'center' }}>
@@ -124,11 +94,14 @@ const Project_TEEP = () => (
       schedules and unsourced requirements.
     </p>
     <p>
-      <strong>Live Demo Link: </strong>https://teep.app1.jdsat-labs.com/
+      <strong>Live Demo: </strong>
+      <a href='https://teep.app1.jdsat-labs.com/' target='_blank'>
+        https://teep.app1.jdsat-labs.com/
+      </a>
     </p>
     <p>
-      <strong>Technologies:</strong> React (Vite), Flask, GitLab CI/CD, MIP-SF
-      (DoD cloud hosting)
+      <strong>Technologies:</strong> React (Vite), Gantt Chart (Svelte Gantt)
+      GitLab CI/CD, Private Cloud Hosting (Demo)
     </p>
     {/* Container with maxWidth and centered */}
     <div
@@ -139,7 +112,7 @@ const Project_TEEP = () => (
         padding: '20px',
       }}
     >
-      <Carousel autoplay arrows>
+      <Carousel autoplay arrows dots={false}>
         {[teep_1, teep_2, teep_3, teep_4].map((img, idx) => (
           <div key={idx} style={{ textAlign: 'center' }}>
             <Image
@@ -169,14 +142,16 @@ const Project_COP = () => (
       tools.
     </p>
     <p>
-      <strong>Live Demo Link: </strong>https://cop-poc.app1.jdsat-labs.com/
+      <strong>Live Demo: </strong>
+      <a href='https://cop-poc.app1.jdsat-labs.com/' target='_blank'>
+        https://cop-poc.app1.jdsat-labs.com/
+      </a>
     </p>
     <p>
-      <strong>Technologies:</strong> React, Flask, SQLAlchemy, PostgreSQL,
-      GitLab CI/CD, MIP-SF (DoD cloud hosting)
+      <strong>Technologies:</strong> React, Flask, Map (Leaflet) GitLab CI/CD,
+      Private Cloud Hosting (Demo)
     </p>
 
-    {/* Container with maxWidth and centered */}
     <div
       style={{
         maxWidth: '800px',
@@ -185,8 +160,56 @@ const Project_COP = () => (
         padding: '20px',
       }}
     >
-      <Carousel autoplay arrows>
+      <Carousel autoplay arrows dots={false}>
         {[cop_1, cop_2, cop_3].map((img, idx) => (
+          <div key={idx} style={{ textAlign: 'center' }}>
+            <Image
+              src={img}
+              alt={`PREP screenshot ${idx + 1}`}
+              style={{
+                maxHeight: '500px',
+                width: '100%',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+              }}
+            />
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  </div>
+)
+
+const Project_Amazon_Clone = () => (
+  <div style={{ padding: '8px 0' }}>
+    <p>
+      Built a responsive e-commerce web application featuring advanced UI
+      development, global state management, and modern design principles.
+      Implemented shopping cart functionality, dynamic product display, and
+      clean user experience to showcase frontend engineering expertise.
+    </p>
+    <p>
+      <strong>Live Demo: </strong>
+      <a href='https://masonkimm.github.io/amazon-clone/' target='_blank'>
+        https://masonkimm.github.io/amazon-clone/
+      </a>
+    </p>
+    <p>
+      <strong>Technologies:</strong> React, React-Router-DOM, React Context,
+      Github Pages, Material UI, Private Cloud Hosting (Demo)
+    </p>
+
+    <div
+      style={{
+        maxWidth: '800px',
+        margin: '0 auto',
+        textAlign: 'center',
+        padding: '20px',
+      }}
+    >
+      <Carousel autoplay arrows dots={false}>
+        {[ac_1, ac_2].map((img, idx) => (
           <div key={idx} style={{ textAlign: 'center' }}>
             <Image
               src={img}
@@ -212,19 +235,48 @@ const Collpase = () => {
       key: '1',
       label: 'PREP - Portal for Readiness and Emergency Preparedness',
       children: <Project_PREP />,
-      extra: <TechIcons stack={['react', 'mysql', 'python']} />,
+      extra: (
+        <TechIcons
+          stack={[
+            'react',
+            'python',
+            'flask',
+            'postgresql',
+            'antd',
+            'gitlab',
+            'cloud',
+          ]}
+          size={20}
+        />
+      ),
     },
     {
       key: '2',
       label: 'TEEP - Training Exercise & Employment Plan',
       children: <Project_TEEP />,
-      extra: <TechIcons stack={['html', 'css']} />,
+      extra: (
+        <TechIcons
+          stack={['react', 'vite', 'gitlab', 'antd', 'gantt', 'cloud']}
+          size={20}
+        />
+      ),
     },
     {
       key: '3',
       label: 'COP',
       children: <Project_COP />,
-      extra: <TechIcons stack={['react', 'python']} />,
+      extra: (
+        <TechIcons
+          stack={['react', 'vite', 'gitlab', 'antd', 'map', 'cloud']}
+          size={20}
+        />
+      ),
+    },
+    {
+      key: '4',
+      label: 'Amazon Clone',
+      children: <Project_Amazon_Clone />,
+      extra: <TechIcons stack={['react', 'github', 'cloud']} size={20} />,
     },
   ]
 

@@ -394,30 +394,9 @@
 }
 
 
-.slick-dots.slick-dots-bottom {
-  position: static !important;
-  margin-top: 30px;
-}
 
-.slick-dots li button {
-  background: #b11d1d !important; /* red */
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  padding: 0;
-}
-.slick-active {
-  color: red !important;
-}
-/* Active dot */
-.slick-dots li.slick-active button {
-  background: #1e6120 !important; /* green for active */
-}
-
-.slick-dots li button:before {
-  display: none !important; /* kill the white dot layer */
-}
-
-.slick-dots li.slick-active button {
-  background: #1e6120 !important; /* green active */
+.tech-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
 }
