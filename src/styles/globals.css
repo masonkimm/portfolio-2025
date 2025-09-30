@@ -32,6 +32,14 @@
 .landing-menu {
   border-right: 1px solid #c7c7c7;
 }
+.ant-anchor-link {
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.ant-anchor-link:hover {
+  transform: translateY(-3px);
+  font-size: 35px;
+}
 
 /* ======================================================== */
 /* Landing Page */
@@ -172,6 +180,28 @@
   width: 80%;
 }
 
+.timeline-steps .ant-steps-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #878686 !important;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.timeline-steps .ant-steps-item-title:hover {
+  transform: translateY(-3px);
+  font-size: 22px; /* a smaller bump than 35px for smoother look */
+}
+
+.timeline-steps .ant-steps-item-process .ant-steps-item-title {
+  color: #1e6120 !important; /* active green */
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.timeline-steps .ant-steps-item {
+  margin-bottom: 20px !important;
+}
+
 /* unfinished steps line */
 .ant-steps-item-wait .ant-steps-item-tail::after {
   background-color: #c7c7c7 !important;
@@ -184,7 +214,7 @@
 
 /* current (active) step line */
 .ant-steps-item-process .ant-steps-item-tail::after {
-  background-color: #1e6120 !important;
+  background-color: #5b5b5e !important;
 }
 
 /* Carousel arrows */
@@ -220,12 +250,12 @@
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.carousel-content:hover {
+/* .carousel-content:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-}
+} */
 
-.carousel-left {
+/* .carousel-left {
   flex: 2;
   text-align: left;
 }
@@ -234,8 +264,18 @@
   flex: 1;
   display: flex;
   justify-content: center;
+} */
+
+.carousel-right {
+  flex: 3;
+  text-align: left;
 }
 
+.carousel-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 .carousel-year {
   font-size: 34px;
   font-weight: 800;
@@ -340,11 +380,6 @@
   height: 300px !important;
 }
 
-
-
-
-
-
 .cursor {
   font-weight: 250;
   display: inline-block;
@@ -356,4 +391,33 @@
   50% {
     opacity: 0;
   }
+}
+
+
+.slick-dots.slick-dots-bottom {
+  position: static !important;
+  margin-top: 30px;
+}
+
+.slick-dots li button {
+  background: #b11d1d !important; /* red */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+}
+.slick-active {
+  color: red !important;
+}
+/* Active dot */
+.slick-dots li.slick-active button {
+  background: #1e6120 !important; /* green for active */
+}
+
+.slick-dots li button:before {
+  display: none !important; /* kill the white dot layer */
+}
+
+.slick-dots li.slick-active button {
+  background: #1e6120 !important; /* green active */
 }

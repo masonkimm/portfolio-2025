@@ -60,14 +60,23 @@ const TechIcons = ({ stack }) => (
 const Project_PREP = () => (
   <div style={{ padding: '8px 0' }}>
     <p>
-      Navy Medicine web app enabling Emergency Managers and Public Health
+      {/* Navy Medicine web app enabling Emergency Managers and Public Health
       Emergency Officers (PHEOs) to collect data, track training, and generate
-      readiness reports across Medical Treatment Facilities (MTFs).
+      readiness reports across Medical Treatment Facilities (MTFs). */}
+      Delivered enterprise emergency management platform enabling Emergency
+      Managers to collect readiness data and track training compliance across
+      100+ Military Treatment Facilities. Consolidated legacy systems into a
+      modern React + Flask platform with automated dashboards, document
+      management, and DoD-cloud security compliance.
     </p>
     <p>
       PREP consolidates Emergency Preparedness, Anti-Terrorism, and NDMS into a
       secure, scalable platform with automated dashboards and document
       management.
+    </p>
+    <p>
+      <strong>Live Demo Link: </strong> Deployed in a secure, private DoD cloud
+      environment
     </p>
     <p>
       <strong>Technologies:</strong> React, Flask, SQLAlchemy, PostgreSQL,
@@ -109,9 +118,13 @@ const Project_PREP = () => (
 const Project_TEEP = () => (
   <div style={{ padding: '8px 0' }}>
     <p>
-      Navy Medicine web application providing data visualization of unit
-      assignment schedules, training phases, event timelines, and unsourced
-      requirements through an interactive Gantt chart.
+      Built React application with a dynamic Gantt chart for managing unit
+      assignments, training phases, and resource requirements. Improved
+      operational planning by providing real-time visibility into training
+      schedules and unsourced requirements.
+    </p>
+    <p>
+      <strong>Live Demo Link: </strong>https://teep.app1.jdsat-labs.com/
     </p>
     <p>
       <strong>Technologies:</strong> React (Vite), Flask, GitLab CI/CD, MIP-SF
@@ -150,14 +163,13 @@ const Project_TEEP = () => (
 const Project_COP = () => (
   <div style={{ padding: '8px 0' }}>
     <p>
-      Navy Medicine web app enabling Emergency Managers and Public Health
-      Emergency Officers (PHEOs) to collect data, track training, and generate
-      readiness reports across Medical Treatment Facilities (MTFs).
+      Developed interactive geospatial mapping application displaying unit
+      deployments, equipment sets, and training phase status. Enabled leadership
+      to monitor readiness and deployment planning with dynamic visualization
+      tools.
     </p>
     <p>
-      PREP consolidates Emergency Preparedness, Anti-Terrorism, and NDMS into a
-      secure, scalable platform with automated dashboards and document
-      management.
+      <strong>Live Demo Link: </strong>https://cop-poc.app1.jdsat-labs.com/
     </p>
     <p>
       <strong>Technologies:</strong> React, Flask, SQLAlchemy, PostgreSQL,

@@ -15,15 +15,26 @@ const About = () => {
     <main className='container-about'>
       <div className='container-about-top'>
         <Paragraph>
-          <span className='title'> <Typewriter text='About me' /></span>
+          <span className='title'>
+            {' '}
+            <Typewriter text='About me' />
+          </span>
           <br />
           {
-            "I'm a full-stack developer with a strong focus on building clean, responsive user interfaces. Over the past few years I've worked across both frontend and backend stacks — from designing React applications with modern tooling to developing secure APIs in Python and Node."
+            // "I'm a full-stack developer with a strong focus on building clean, responsive user interfaces. Over the past few years I've worked across both frontend and backend stacks — from designing React applications with modern tooling to developing secure APIs in Python and Node."
+            'Full-Stack Software Engineer with 4+ years of experience architecting and delivering scalable, secure web applications for mission-critical government systems. Frontend-focused with strong backend proficiency and object-oriented designs, cloud deployment automation, and compliance-driven engineering. Demonstrated ability to lead initiatives, optimize system performance, and collaborate cross-functionally to deliver solutions serving thousands of users while maintaining the highest security and accessibility standards. '
           }
           <br />
           <br />
+
           {
-            "I enjoy solving problems through code, refining UI/UX for better accessibility, and collaborating with teams to bring ideas from concept to production. Outside of work, I'm always learning — whether it's new JavaScript frameworks, cloud services like AWS, or improving DevOps workflows."
+            'I enjoy solving problems through code, refining UI/UX for better accessibility, and collaborating with teams to bring ideas from concept to production.'
+          }
+          <br />
+          <br />
+
+          {
+            "Outside of work, I'm always learning — whether it's new JavaScript frameworks, cloud services like AWS, or improving DevOps workflows."
           }
         </Paragraph>
       </div>

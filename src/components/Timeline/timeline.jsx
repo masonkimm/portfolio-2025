@@ -55,14 +55,14 @@ const timelineData = [
 // Reusable item
 const CarouselItem = ({ year, title, subtitle, description, logo }) => (
   <div className='carousel-content'>
-    <div className='carousel-left'>
+    <img className='carousel-logo' src={logo} alt={`${title} logo`} />
+
+    <div className='carousel-left'></div>
+    <div className='carousel-right'>
       <p className='carousel-year'>{year}</p>
       <h2 className='carousel-title'>{title}</h2>
       <h3 className='carousel-subtitle'>{subtitle}</h3>
       {description && <p className='carousel-description'>{description}</p>}
-    </div>
-    <div className='carousel-right'>
-      <img className='carousel-logo' src={logo} alt={`${title} logo`} />
     </div>
   </div>
 )
