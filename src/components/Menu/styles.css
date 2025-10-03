@@ -1,0 +1,48 @@
+/* Menu */
+.landing-menu {
+  position: sticky; /* stays in view while left side scrolls */
+  top: 0;
+  height: 100vh; /* give it a box to center within */
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  text-align: center; /* fix typo: was 'text: center;' */
+  /* optional: border-left: 1px solid #e5e7eb; */
+  border-right: 1px solid #c7c7c7;
+}
+
+.ant-anchor-ink {
+  background-color: rgb(14, 14, 14) !important;
+}
+
+.ant-anchor-link-title {
+  color: #6b7280 !important;
+  /* font-size: clamp(16px, 2.2vw, 15px); */
+  font-size: clamp(14px, 2vw, 20px); /* min:14px, fluid, max:20px */
+}
+
+.ant-anchor-link-title-active {
+  color: #333 !important;
+  font-size: clamp(40px, 3vw, 28px); /* scales smoothly */
+  /* font-size: clamp(36px, 6vw, 44px); */
+}
+:where(.css-dev-only-do-not-override-bqnnvg).ant-anchor-wrapper:not(
+    .ant-anchor-wrapper-horizontal
+  )
+  .ant-anchor::before {
+  /* background-color: #111111 !important; */
+  display: none !important;
+}
+.ant-anchor-ink {
+  display: none !important;
+}
+
+.ant-anchor-link {
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.ant-anchor-link:hover {
+  transform: translateY(-3px);
+  font-size: 35px;
+}
+

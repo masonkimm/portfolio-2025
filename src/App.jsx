@@ -1,9 +1,10 @@
-import { Alert, Anchor, Col, Row } from 'antd'
+import { Alert, Col, Row } from 'antd'
 import Landing from './pages/Landing'
 import UnderConstructionModal from './components/Modal/UnderConstructionModal'
 import Marquee from 'react-fast-marquee'
 import About from './pages/About'
 import Projects from './pages/Projects'
+import Menu from './components/Menu/'
 
 const App = () => {
   return (
@@ -28,29 +29,10 @@ const App = () => {
         }}
       />
       <Row className='landing-page'>
-        <Col span={4} className='landing-menu'>
-          <Anchor
-            affix={false}
-            items={[
-              {
-                key: 'home',
-                href: '#home',
-                title: 'Home',
-              },
-              {
-                key: 'about',
-                href: '#about',
-                title: 'About',
-              },
-              {
-                key: 'projects',
-                href: '#projects',
-                title: 'Projects',
-              },
-            ]}
-          />
+        <Col xs={0} sm={5} md={4} lg={3} className='landing-menu'>
+          <Menu />
         </Col>
-        <Col span={20}>
+        <Col xs={25} sm={19} md={20} lg={21}>
           <div id='home'>
             <Landing />
           </div>
