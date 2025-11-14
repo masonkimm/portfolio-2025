@@ -1,0 +1,29 @@
+/* Light mode (default) */
+:root {
+  --bg: #fafafa;
+  --text: #111111;
+  --card-bg: #f2f2f2;
+  --accent: #444;
+  --accent-hover: #000;
+  --section-bg: #f4f4f4;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --text-soft: #505050;
+}
+
+/* Dark mode */
+.dark {
+  --bg: #2b2a2a;
+  --text: #e6e6e6;
+  --card-bg: #1a1a1a;
+  --accent: #999;
+  --accent-hover: #fff;
+  --section-bg: #111111;
+  --shadow: rgba(255, 255, 255, 0.15);
+  --text-soft: #bdbdbd;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}

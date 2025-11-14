@@ -1,0 +1,14 @@
+.resume-frame {
+  width: 100%;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.dark .resume-frame * {
+  background: #323232 !important;
+}
+
+.dark .resume-frame .rpv-core__annotation-layer,
+.dark .resume-frame .rpv-core__annotation-layer * {
+  background: transparent !important;
+}

@@ -15,7 +15,7 @@ const About = () => {
   return (
     <main className='container-about'>
       <div className='container-about-top'>
-        <Paragraph>
+        <Paragraph className='about-text'>
           <span className='title'>
             <Typewriter text='About me' />
           </span>
@@ -42,7 +42,10 @@ const About = () => {
       <div className='container-about-middle'>
         <div className='container-about-middle-left'>
           <Button
-            className={viewTimeline ? 'about-btn active' : 'about-btn'}
+            style={{
+              background: viewTimeline ? 'var(--accent)' : 'var(--card-bg)',
+              color: viewTimeline ? '#fff' : 'var(--text)',
+            }}
             onClick={() => {
               setViewTimeline(true)
               setViewResume(false)
@@ -51,7 +54,10 @@ const About = () => {
             Timeline
           </Button>
           <Button
-            className={viewResume ? 'about-btn active' : 'about-btn'}
+            style={{
+              background: viewResume ? 'var(--accent)' : 'var(--card-bg)',
+              color: viewResume ? '#fff' : 'var(--text)',
+            }}
             onClick={() => {
               setViewResume(true)
               setViewTimeline(false)
@@ -63,7 +69,11 @@ const About = () => {
         <div className='container-about-middle-right'>
           {viewResume && (
             <Button
-              className='about-btn'
+              className='download-btn'
+              style={{
+                background: 'var(--card-bg)',
+                color: 'var(--text)',
+              }}
               onClick={() => {
                 const link = document.createElement('a')
                 link.href = '/portfolio-2025/Resume-2025.pdf'

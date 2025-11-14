@@ -1,17 +1,37 @@
-import { Alert, Col, Row } from 'antd'
+import { Alert, Col, ConfigProvider, Row, theme } from 'antd'
 import Landing from './pages/Landing'
 import UnderConstructionModal from './components/Modal/UnderConstructionModal'
 import Marquee from 'react-fast-marquee'
 import About from './pages/About/'
 import Projects from './pages/Projects'
 import Menu from './components/Menu/'
+import { useEffect, useState } from 'react'
+import Navbar from './components/Navbar/navBar'
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem('theme') === 'dark',
+  )
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [darkMode])
+
   return (
-    <>
-      <UnderConstructionModal />
+    <ConfigProvider
+      theme={{
+        algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}
+    >
+      {/* <UnderConstructionModal /> */}
       {/* Fixed banner at the top */}
-      <Alert
+      {/* <Alert
         message={
           <Marquee pauseOnHovers>
             🚧 Site Under Construction: Some pages and features may not be
@@ -27,7 +47,8 @@ const App = () => {
           width: '100%',
           zIndex: 1000,
         }}
-      />
+      /> */}
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Row className='landing-page'>
         <Col xs={0} sm={5} md={4} lg={3} className='landing-menu'>
           <Menu />
@@ -44,7 +65,7 @@ const App = () => {
           </div>
         </Col>
       </Row>
-    </>
+    </ConfigProvider>
   )
 }
 export default App
