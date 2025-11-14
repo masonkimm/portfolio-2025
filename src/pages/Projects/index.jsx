@@ -1,7 +1,9 @@
 import { Divider, Typography } from 'antd'
-import Collpase from '../components/Collapse/collapse'
-import Typewriter from '../components/TypeWriter/typeWriter'
-import TechIcons, { baseIconMap } from '../components/TechIcons/techIcons'
+import Collpase from '../../components/Collapse/collapse'
+import Typewriter from '../../components/TypeWriter/typeWriter'
+import TechIcons, { baseIconMap } from '../../components/TechIcons/techIcons'
+import './styles.css'
+
 const { Paragraph } = Typography
 
 const Projects = () => {
