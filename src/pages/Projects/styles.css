@@ -1,0 +1,113 @@
+/* ======================================================== */
+/* PROJECTS CONTAINER */
+/* ======================================================== */
+
+.container-projects {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* ======================================================== */
+/* ICONS */
+/* ======================================================== */
+
+.icon {
+  font-size: 25px;
+  margin: 0 8px;
+  color: var(--text-soft);
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.3);
+  color: var(--accent);
+}
+
+.icon-collapse {
+  font-size: 20px;
+}
+
+/* ======================================================== */
+/* COLLAPSE PANELS */
+/* ======================================================== */
+
+/* Remove default white backgrounds and borders */
+.ant-collapse {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ant-collapse-item {
+  border: none !important;
+  margin-bottom: 14px;
+}
+
+/* Panel Header = SAME as carousel background */
+.ant-collapse-header {
+  background: var(--card-bg) !important;
+  color: var(--text) !important;
+  border-radius: 10px;
+  padding: 16px !important;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Remove outline on expanded section */
+.ant-collapse-content {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* CONTENT = SAME as carousel card */
+.ant-collapse-content-box {
+  background: var(--card-bg) !important;        /* match carousel */
+  padding: 18px 20px;
+  border-radius: 0 0 10px 10px;
+  color: var(--text) !important;
+  transition: background 0.25s ease;
+}
+
+
+/* ======================================================== */
+/* PROJECT IMAGE */
+/* ======================================================== */
+
+.project-img {
+  height: 300px !important;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* ======================================================== */
+/* TECH ICONS */
+/* ======================================================== */
+
+.tech-icon {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 4px var(--shadow));
+  cursor: pointer;
+}
+
+/* Cursor animation */
+.cursor {
+  font-weight: 250;
+  display: inline-block;
+  margin-left: 10px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
