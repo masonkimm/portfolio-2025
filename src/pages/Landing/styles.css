@@ -1,0 +1,59 @@
+.container-landing {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Hero background */
+  background: url('https://images.unsplash.com/photo-1487700160041-babef9c3cb55?q=80&w=1704&auto=format&fit=crop&ixlib=rb-4.1.0')
+    no-repeat center center;
+  background-size: cover;   /* fills the whole screen */
+}
+
+/* Content floats above the background */
+.landing-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #333;
+  padding: 20px;
+  /* background: rgba(255, 255, 255, 0.5);  */
+  border-radius: 8px;
+}
+
+/* Text */
+.title {
+  font-size: clamp(36px, 6vw, 80px);
+  letter-spacing: -0.02em;
+}
+
+.landing-subtitle {
+  color: #6b7280;
+  font-size: clamp(16px, 2.5vw, 22px);
+  margin-top: 8px;
+}
+
+/* Icons */
+.landing-icons {
+  margin-top: 12px;
+}
+
+.landing-icon {
+  font-size: 24px;
+  margin: 0 12px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.landing-icon:hover {
+  transform: scale(1.2);
+  color: #1e6120;
+}
+
+@media (max-width: 575.98px) {
+  .landing-menu {
+    display: none !important;
+  }
+}

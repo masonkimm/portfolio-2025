@@ -1,0 +1,266 @@
+/* About Page */
+/* ======================================================== */
+
+/* Remove fixed height */
+.container-about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+.container-about-top {
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  /* align-items: center;
+  justify-content: center; */
+  /* border: 1px solid orange; */
+}
+.about-title {
+  font-size: clamp(36px, 6vw, 74px);
+  letter-spacing: -0.02em;
+  color: #505050;
+}
+
+.container-about-middle {
+  display: flex;
+  justify-content: space-between;
+}
+.about-btn {
+  background: #fff;
+  /* border: 1px solid #c7c7c7; */
+  border: none;
+  color: #333;
+  margin-right: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.about-btn:hover {
+  background: #747474 !important;
+  border-color: #999 !important;
+  color: #fefefe !important;
+}
+
+.about-btn.active {
+  background: #333;
+  border-color: #333;
+  color: #ffffff;
+}
+
+.container-about-bottom {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 85%; */
+  margin-top: 20px;
+}
+
+/* ======================================================== */
+/* Timeline */
+/* ======================================================== */
+
+
+.timeline-steps .ant-steps-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #878686 !important;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.timeline-steps .ant-steps-item-title:hover {
+  transform: translateY(-3px);
+  font-size: 22px; /* a smaller bump than 35px for smoother look */
+}
+
+.timeline-steps .ant-steps-item-process .ant-steps-item-title {
+  color: #1e6120 !important; /* active green */
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.timeline-steps .ant-steps-item {
+  margin-bottom: 20px !important;
+}
+
+/* unfinished steps line */
+.ant-steps-item-wait .ant-steps-item-tail::after {
+  background-color: #c7c7c7 !important;
+}
+
+/* finished steps line */
+.ant-steps-item-finish .ant-steps-item-tail::after {
+  background-color: #1e6120 !important;
+}
+
+/* current (active) step line */
+.ant-steps-item-process .ant-steps-item-tail::after {
+  background-color: #5b5b5e !important;
+}
+
+/* Carousel arrows */
+
+.slick-arrow {
+  font-size: 70px !important;
+  color: black !important;
+  opacity: 5 !important; /* ensure always visible */
+}
+
+/* Carousel */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.carousel-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90%;
+  max-width: 1000px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 40px 50px;
+
+  border-radius: 16px;
+  /* background: linear-gradient(135deg, #ffffff, #f7f7f7); */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* .carousel-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+} */
+
+/* .carousel-left {
+  flex: 2;
+  text-align: left;
+}
+
+.carousel-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+} */
+
+.carousel-right {
+  flex: 3;
+  text-align: left;
+}
+
+.carousel-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-year {
+  font-size: clamp(16px, 5vw, 34px); /* shrink on phones, cap on desktop */
+  font-weight: 800;
+  color: #1e6120;
+  margin-bottom: 8px;
+}
+
+.carousel-title {
+  font-size: clamp(16px, 3.5vw, 26px);
+  font-weight: 700;
+  color: #333;
+}
+
+.carousel-subtitle {
+  font-size: clamp(12px, 3vw, 20px);
+  color: #555;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.carousel-description {
+  font-size: clamp(10px, 2.5vw, 16px);
+  margin-top: 15px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 550px;
+}
+
+.carousel-logo {
+  width: 200px;
+  height: auto;
+  /* filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); */
+  /* transition: transform 0.3s ease; */
+}
+.carousel-logo:hover {
+  transform: scale(1.1);
+}
+
+.ant-steps-icon-dot,
+:where(.css-dev-only-do-not-override-bqnnvg).ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background: rgb(1, 104, 3) !important;
+}
+
+.ant-steps-item.ant-steps-item-process.ant-steps-item-active {
+  color: red !important;
+}
+
+/* Resume iframe */
+/* Resume viewer */
+.resume-frame {
+  width: 100%;
+  height: 80vh; /* take 80% of viewport */
+  max-height: 900px; /* don’t grow endlessly */
+  border: none;
+  border-radius: 8px;
+  display: block;
+  overflow: auto; /* scroll inside if content overflows */
+}
+
+
+/* Make sure no overflow on small screens */
+.timeline-container {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 100%; /* prevent overshoot */
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .carousel-container {
+    padding: 16px;   /* safe inner spacing */
+  }
+
+  .carousel-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}

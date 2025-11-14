@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { ConfigProvider } from 'antd'
 import App from './App.jsx'
 import './App.css'
+import 'antd/dist/reset.css'
 import './styles/globals.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
