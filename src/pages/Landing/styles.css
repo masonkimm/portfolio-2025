@@ -6,33 +6,53 @@
   justify-content: center;
   align-items: center;
 
-  /* Hero background */
   background: url('https://images.unsplash.com/photo-1487700160041-babef9c3cb55?q=80&w=1704&auto=format&fit=crop&ixlib=rb-4.1.0')
-    no-repeat center center;
-  background-size: cover;   /* fills the whole screen */
+    no-repeat center center / cover;
 }
 
-/* Content floats above the background */
+/* Dark mode background ENHANCER */
+.dark .container-landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 0.9),
+    rgba(18, 18, 18, 0.7)
+  );
+
+  backdrop-filter: brightness(0.8);
+  z-index: 0;
+}
+
 .landing-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #333;
   padding: 20px;
-  /* background: rgba(255, 255, 255, 0.5);  */
-  border-radius: 8px;
 }
 
-/* Text */
+/* Text styles */
 .title {
   font-size: clamp(36px, 6vw, 80px);
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
+/* Subtitle */
 .landing-subtitle {
-  color: #6b7280;
   font-size: clamp(16px, 2.5vw, 22px);
   margin-top: 8px;
+  color: var(--text-soft);
+}
+
+/* Dark mode text upgrade */
+.dark .title {
+  color: #ffffff;
+}
+.dark .landing-subtitle {
+  color: #e5e5e5;
 }
 
 /* Icons */
@@ -41,15 +61,20 @@
 }
 
 .landing-icon {
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 12px;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
+  color: var(--text);
+}
+
+.dark .landing-icon {
+  color: #ffffff;
 }
 
 .landing-icon:hover {
   transform: scale(1.2);
-  color: #1e6120;
+  color: var(--accent);
 }
 
 @media (max-width: 575.98px) {

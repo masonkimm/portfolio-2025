@@ -1,64 +1,115 @@
-/* About Page */
+/* ======================================================== */
+/* About Page Container */
 /* ======================================================== */
 
-/* Remove fixed height */
 .container-about {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #fff;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.25s ease;
   padding: 10px;
   box-sizing: border-box;
   margin-bottom: 60px;
 }
+
 .container-about-top {
   display: flex;
-  margin-top: -10px;
-  margin-bottom: -10px;
-  /* align-items: center;
-  justify-content: center; */
-  /* border: 1px solid orange; */
+  margin: -10px 0;
 }
+
+/* ======================================================== */
+/* About Page Text */
+/* ======================================================== */
+
+.about-text {
+  color: var(--text) !important;
+}
+
+.about-text span,
+.about-text strong,
+.about-text p {
+  color: var(--text) !important;
+}
+
 .about-title {
   font-size: clamp(36px, 6vw, 74px);
   letter-spacing: -0.02em;
-  color: #505050;
+  color: var(--text-soft);
 }
+
+/* ======================================================== */
+/* Buttons */
+/* ======================================================== */
 
 .container-about-middle {
   display: flex;
   justify-content: space-between;
 }
-.about-btn {
-  background: #fff;
-  /* border: 1px solid #c7c7c7; */
+
+/* Tab Buttons (Timeline / Resume) */
+.tab-btn {
   border: none;
-  color: #333;
   margin-right: 8px;
   border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
-.about-btn:hover {
-  background: #747474 !important;
-  border-color: #999 !important;
-  color: #fefefe !important;
+.tab-btn:hover {
+  opacity: 0.9;
+}
+.tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+/* Download Button */
+/* Base */
+.download-btn {
+  border: none !important;
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.about-btn.active {
-  background: #333;
-  border-color: #333;
+/* Light Mode */
+.download-btn {
+  background: #1a1a1a;
   color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.download-btn:hover {
+  background: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Mode */
+.dark .download-btn {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+.dark .download-btn:hover {
+  background: #e5e5e5 !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+}
+
+/* Bottom Content Container */
 .container-about-bottom {
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 85%; */
   margin-top: 20px;
 }
 
@@ -66,21 +117,20 @@
 /* Timeline */
 /* ======================================================== */
 
-
 .timeline-steps .ant-steps-item-title {
   font-size: 18px;
   font-weight: 600;
-  color: #878686 !important;
+  color: var(--text-soft) !important;
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 .timeline-steps .ant-steps-item-title:hover {
   transform: translateY(-3px);
-  font-size: 22px; /* a smaller bump than 35px for smoother look */
+  font-size: 22px;
 }
 
 .timeline-steps .ant-steps-item-process .ant-steps-item-title {
-  color: #1e6120 !important; /* active green */
+  color: var(--accent) !important;
   font-size: 22px;
   font-weight: 700;
 }
@@ -89,69 +139,63 @@
   margin-bottom: 20px !important;
 }
 
-/* unfinished steps line */
+/* step connecting lines */
 .ant-steps-item-wait .ant-steps-item-tail::after {
-  background-color: #c7c7c7 !important;
+  background-color: var(--text-soft) !important;
 }
-
-/* finished steps line */
 .ant-steps-item-finish .ant-steps-item-tail::after {
-  background-color: #1e6120 !important;
+  background-color: var(--accent) !important;
 }
-
-/* current (active) step line */
 .ant-steps-item-process .ant-steps-item-tail::after {
-  background-color: #5b5b5e !important;
+  background-color: var(--accent-hover) !important;
 }
 
-/* Carousel arrows */
+/* active dot */
+.ant-steps-icon-dot,
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background: var(--accent) !important;
+}
+
+.ant-steps-item.ant-steps-item-process.ant-steps-item-active {
+  color: white !important;
+}
+
+/* ======================================================== */
+/* Carousel */
+/* ======================================================== */
 
 .slick-arrow {
   font-size: 70px !important;
-  color: black !important;
-  opacity: 5 !important; /* ensure always visible */
+  color: var(--text) !important;
+  opacity: 1 !important;
 }
 
-/* Carousel */
 .carousel-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 0;
 }
+
 .carousel-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   width: 90%;
   max-width: 1000px;
   min-height: 400px;
   margin: 0 auto;
   padding: 40px 50px;
-
   border-radius: 16px;
-  /* background: linear-gradient(135deg, #ffffff, #f7f7f7); */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* .carousel-content:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-} */
 
-/* .carousel-left {
-  flex: 2;
-  text-align: left;
+.dark .carousel-content {
+  background: var(--card-bg);
 }
-
-.carousel-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-} */
 
 .carousel-right {
   flex: 3;
@@ -164,22 +208,23 @@
   justify-content: center;
 }
 
+/* Carousel Text */
 .carousel-year {
-  font-size: clamp(16px, 5vw, 34px); /* shrink on phones, cap on desktop */
+  font-size: clamp(16px, 5vw, 34px);
   font-weight: 800;
-  color: #1e6120;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
 .carousel-title {
   font-size: clamp(16px, 3.5vw, 26px);
   font-weight: 700;
-  color: #333;
+  color: var(--text);
 }
 
 .carousel-subtitle {
   font-size: clamp(12px, 3vw, 20px);
-  color: #555;
+  color: var(--text-soft);
   margin-top: 5px;
   font-style: italic;
 }
@@ -188,56 +233,30 @@
   font-size: clamp(10px, 2.5vw, 16px);
   margin-top: 15px;
   line-height: 1.6;
-  color: #444;
+  color: var(--text-soft);
   max-width: 550px;
 }
 
 .carousel-logo {
   width: 200px;
   height: auto;
-  /* filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2)); */
-  /* transition: transform 0.3s ease; */
 }
+
 .carousel-logo:hover {
   transform: scale(1.1);
 }
 
-.ant-steps-icon-dot,
-:where(.css-dev-only-do-not-override-bqnnvg).ant-steps
-  .ant-steps-item-finish
-  > .ant-steps-item-container
-  > .ant-steps-item-tail::after {
-  background: rgb(1, 104, 3) !important;
-}
+/* ======================================================== */
+/* Layout helpers */
+/* ======================================================== */
 
-.ant-steps-item.ant-steps-item-process.ant-steps-item-active {
-  color: red !important;
-}
-
-/* Resume iframe */
-/* Resume viewer */
-.resume-frame {
-  width: 100%;
-  height: 80vh; /* take 80% of viewport */
-  max-height: 900px; /* don’t grow endlessly */
-  border: none;
-  border-radius: 8px;
-  display: block;
-  overflow: auto; /* scroll inside if content overflows */
-}
-
-
-/* Make sure no overflow on small screens */
 .timeline-container {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  overflow-x: hidden;
-}
-.timeline-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  overflow-x: hidden;
 }
 
 .carousel-wrapper {
@@ -248,13 +267,17 @@
 
 .carousel-container {
   width: 100%;
-  max-width: 100%; /* prevent overshoot */
+  max-width: 100%;
   margin: 0 auto;
 }
 
+/* ======================================================== */
+/* Responsive */
+/* ======================================================== */
+
 @media (max-width: 767px) {
   .carousel-container {
-    padding: 16px;   /* safe inner spacing */
+    padding: 16px;
   }
 
   .carousel-content {
