@@ -1,48 +1,76 @@
-/* Menu */
+/* ======================================================== */
+/* Sidebar Menu Container */
+/* ======================================================== */
+
 .landing-menu {
-  position: sticky; /* stays in view while left side scrolls */
+  position: sticky;
   top: 0;
-  height: 100vh; /* give it a box to center within */
+  height: 100vh;
   display: flex;
-  align-items: center; /* vertical center */
-  justify-content: center; /* horizontal center */
-  text-align: center; /* fix typo: was 'text: center;' */
-  /* optional: border-left: 1px solid #e5e7eb; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border-right: 1px solid #c7c7c7;
 }
 
-.ant-anchor-ink {
-  background-color: rgb(14, 14, 14) !important;
-}
-
-.ant-anchor-link-title {
-  color: #6b7280 !important;
-  /* font-size: clamp(16px, 2.2vw, 15px); */
-  font-size: clamp(14px, 2vw, 20px); /* min:14px, fluid, max:20px */
-}
-
-.ant-anchor-link-title-active {
-  color: #333 !important;
-  font-size: clamp(40px, 3vw, 28px); /* scales smoothly */
-  /* font-size: clamp(36px, 6vw, 44px); */
-}
+/* Hide the left guiding bar (default Ant Design anchor line) */
 :where(.css-dev-only-do-not-override-bqnnvg).ant-anchor-wrapper:not(
     .ant-anchor-wrapper-horizontal
   )
   .ant-anchor::before {
-  /* background-color: #111111 !important; */
   display: none !important;
 }
+
 .ant-anchor-ink {
   display: none !important;
 }
 
-.ant-anchor-link {
-  transition: transform 0.3s ease, font-size 0.3s ease;
+/* ======================================================== */
+/* Link Styling (Light Mode) */
+/* ======================================================== */
+
+.ant-anchor-link-title {
+  color: #6b7280 !important;
+  font-size: clamp(14px, 2vw, 20px);
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.25s ease;
 }
 
+.ant-anchor-link-title-active {
+  color: #333 !important;
+  font-size: clamp(40px, 3vw, 28px);
+}
+
+/* Hover animation */
 .ant-anchor-link:hover {
   transform: translateY(-3px);
   font-size: 35px;
 }
 
+/* ======================================================== */
+/* DARK MODE OVERRIDES */
+/* ======================================================== */
+
+/* Regular link text becomes brighter */
+.dark .ant-anchor-link-title {
+  color: #e5e5e5 !important;
+}
+
+/* Hover — brighten more */
+.dark .ant-anchor-link:hover .ant-anchor-link-title {
+  color: #ffffff !important;
+}
+
+/* Active link — pure white */
+.dark .ant-anchor-link-title-active {
+  color: #ffffff !important;
+}
+
+/* Soft hover movement in dark mode */
+.dark .ant-anchor-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Darker sidebar border in dark mode */
+.dark .landing-menu {
+  border-right: 1px solid #3a3a3a;
+}

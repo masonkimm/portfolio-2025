@@ -1,0 +1,76 @@
+/* Main toggle button */
+.theme-toggle-btn {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 2000;
+
+  height: 40px;
+  width: 40px;
+  padding: 0;
+
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    width 0.25s ease,
+    padding 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Icon */
+.toggle-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Label (hidden until hover expand) */
+.toggle-label {
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  width: 150px;
+  padding-right: 14px;
+}
+
+.theme-toggle-btn:hover .toggle-label {
+  opacity: 1;
+}
+
+.theme-toggle-btn.light {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.theme-toggle-btn.light:hover {
+  background: #111 !important;
+}
+
+.theme-toggle-btn.dark {
+  background: #fff;
+  color: #111 !important;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.15);
+}
+
+.theme-toggle-btn.dark:hover {
+  background: #fff !important;
+}

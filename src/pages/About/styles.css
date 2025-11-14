@@ -104,7 +104,6 @@
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
 }
 
-
 /* Bottom Content Container */
 .container-about-bottom {
   display: flex;
@@ -185,17 +184,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   width: 90%;
   max-width: 1000px;
   min-height: 400px;
   margin: 0 auto;
   padding: 40px 50px;
   border-radius: 16px;
-
-  background: var(--card-bg);
-  box-shadow: 0 10px 30px var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .carousel-content {
+  background: var(--card-bg);
 }
 
 .carousel-right {
@@ -246,7 +245,6 @@
 .carousel-logo:hover {
   transform: scale(1.1);
 }
-
 
 /* ======================================================== */
 /* Layout helpers */

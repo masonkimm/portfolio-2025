@@ -1,19 +1,18 @@
 import { SunOutlined, MoonOutlined } from '@ant-design/icons'
-
+import './styles.css'
 export default function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
+      className={`theme-toggle-btn ${darkMode ? 'dark' : 'light'}`}
       onClick={() => setDarkMode(!darkMode)}
-      style={{
-        fontSize: '22px',
-        background: 'none',
-        border: 'none',
-        color: 'var(--text)',
-        cursor: 'pointer',
-        marginLeft: '15px',
-      }}
     >
-      {darkMode ? <SunOutlined /> : <MoonOutlined />}
+      <span className='toggle-icon'>
+        {darkMode ? <SunOutlined /> : <MoonOutlined />}
+      </span>
+
+      <span className='toggle-label'>
+        {darkMode ? 'Light Mode' : 'Dark Mode'}
+      </span>
     </button>
   )
 }
