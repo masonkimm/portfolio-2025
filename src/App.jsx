@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import Menu from './components/Menu/'
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar/navBar'
+import ThemeToggle from './components/ThemeToggle/themeToggle'
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(
@@ -29,9 +30,9 @@ const App = () => {
         algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}
     >
-      {/* <UnderConstructionModal /> */}
+      <UnderConstructionModal />
       {/* Fixed banner at the top */}
-      {/* <Alert
+      <Alert
         message={
           <Marquee pauseOnHovers>
             🚧 Site Under Construction: Some pages and features may not be
@@ -47,8 +48,10 @@ const App = () => {
           width: '100%',
           zIndex: 1000,
         }}
-      /> */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      />
+      {/* <Navbar darkMode={darkMode} setDarkMode={setDarkMode} /> */}
+      {/* Floating Theme Toggle */}
+      <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       <Row className='landing-page'>
         <Col xs={0} sm={5} md={4} lg={3} className='landing-menu'>
           <Menu />
