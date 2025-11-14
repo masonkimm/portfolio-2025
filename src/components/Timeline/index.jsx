@@ -84,8 +84,8 @@ const Timeline = () => {
   const handleAfterChange = (i) => setCurrent(i)
 
   return (
-    <Row className='timeline-container' gutter={2}>
-      <Col span={4}>
+    <Row className='timeline-container' gutter={16} justify='center'>
+      <Col xs={0} md={5}>
         <Steps
           direction='vertical'
           className='timeline-steps'
@@ -97,7 +97,7 @@ const Timeline = () => {
           progressDot
         />
       </Col>
-      <Col span={20}>
+      <Col xs={24} md={19}>
         <Carousel
           ref={carouselRef}
           autoplay

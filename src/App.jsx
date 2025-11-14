@@ -2,7 +2,7 @@ import { Alert, Col, Row } from 'antd'
 import Landing from './pages/Landing'
 import UnderConstructionModal from './components/Modal/UnderConstructionModal'
 import Marquee from 'react-fast-marquee'
-import About from './pages/About'
+import About from './pages/About/'
 import Projects from './pages/Projects'
 import Menu from './components/Menu/'
 

@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import Timeline from '../components/Timeline/timeline'
+import Timeline from '../../components/Timeline'
 import { Button, Divider, Typography } from 'antd'
-// import resumePdf from '../assets/Resume-2025.pdf'
-import Resume from '../components/PdfViewer/pdfViewer'
+import Resume from '../../components/PdfViewer/pdfViewer'
 import { DownloadOutlined } from '@ant-design/icons'
-import Typewriter from '../components/TypeWriter/typeWriter'
+import Typewriter from '../../components/TypeWriter/typeWriter'
+import './styles.css'
+
 const { Paragraph } = Typography
 
 const About = () => {
@@ -16,13 +17,12 @@ const About = () => {
       <div className='container-about-top'>
         <Paragraph>
           <span className='title'>
-            {' '}
             <Typewriter text='About me' />
           </span>
           <br />
           {
             // "I'm a full-stack developer with a strong focus on building clean, responsive user interfaces. Over the past few years I've worked across both frontend and backend stacks — from designing React applications with modern tooling to developing secure APIs in Python and Node."
-            'Full-Stack Software Engineer with 4+ years of experience architecting and delivering scalable, secure web applications for mission-critical government systems. Frontend-focused with strong backend proficiency and object-oriented designs, cloud deployment automation, and compliance-driven engineering. Demonstrated ability to lead initiatives, optimize system performance, and collaborate cross-functionally to deliver solutions serving thousands of users while maintaining the highest security and accessibility standards. '
+            'Full-Stack Software Engineer with 4+ years of experience architecting and delivering scalable, secure web applications for mission-critical government systems. Frontend-focused with strong backend proficiency and object-oriented designs, cloud deployment automation, and compliance-driven engineering. Demonstrated ability to lead initiatives, optimize system performance, and collaborate cross-functionally to deliver solutions serving thousands of users while maintaining the highest security and accessibility standards.'
           }
           <br />
           <br />
